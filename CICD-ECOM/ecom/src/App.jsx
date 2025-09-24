@@ -26,7 +26,7 @@ function App() {
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Router>
+    <Router basename="/gitactions-ecom/">
       <Navbar cartCount={totalQuantity} />
 
       <Routes>

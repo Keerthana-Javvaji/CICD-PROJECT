@@ -1,7 +1,7 @@
 import React from "react";
 import smartphones from "../data/smartphonesData";
 import { useNavigate } from "react-router-dom";
-import "./SmartphonePage.css";
+import "./smartphonePage.css";
 
 export default function SmartphonePage({ cart, setCart }) {
   const navigate = useNavigate();

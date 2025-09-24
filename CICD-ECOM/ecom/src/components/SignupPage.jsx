@@ -10,6 +10,9 @@ export default function SignupPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  // Backend API URL from environment variable
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,11 +23,11 @@ export default function SignupPage() {
     }
 
     try {
-      const response = await axios.post("http://localhost:9092/api/auth/signup", {
+      const response = await axios.post(`${API_URL}/auth/signup`, {
         username: name,
         email,
         password,
-        role: "user", // 👈 Add default role here
+        role: "user", // default role
       });
 
       if (response.data === "User registered successfully!") {
